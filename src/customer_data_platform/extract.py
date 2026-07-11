@@ -1,27 +1,17 @@
+import pandas as pd
 import logging
+from customer_data_platform.paths import ONLINE_RETAIL_DATASET, RAW_DATA_DIR
 
 logger = logging.getLogger(__name__)
 
+def extract_customer_data():
 
-def extract_customers() -> list[dict]:
-    """
-    Extract customer records.
+    output_file = RAW_DATA_DIR / "customer_raw.csv"
 
-    Returns:
-        A list of customer records.
-    """
+    df = pd.read_excel(ONLINE_RETAIL_DATASET)
 
-    logger.info("Starting customer extraction.")
+    df.to_csv(output_file, index=False)
 
-    customers = [
-        {
-            "customer_id": "C001",
-        },
-        {
-            "customer_id": "C002",
-        },
-    ]
+    logger.info("Extracted %s rows", len(df))
 
-    logger.info("Customer extraction completed.")
-
-    return customers
+    return str(output_file)

@@ -1,24 +1,20 @@
 import logging
+import pandas as pd
 
 logger = logging.getLogger(__name__)
 
 
-def validate_customers(customers: list[dict]) -> list[dict]:
-    """
-    Validate extracted customer records.
+def validate_customer_data(input_file: str):
 
-    Args:
-        customers: Customer records.
+    df = pd.read_csv(input_file)
+    logger.info("Rows: %s", len(df))
 
-    Returns:
-        Validated customer records.
-    """
+    logger.info("Columns: %s", len(df.columns))
 
-    logger.info("Starting customer validation.")
+    logger.info("Missing Values:\n%s", df.isnull().sum())
 
-    if not customers:
-        raise ValueError("No customer records found.")
+    logger.info("Data Types:\n%s", df.dtypes)
 
-    logger.info("Customer validation completed.")
+    logger.info("Validation completed.")
 
-    return customers
+    return input_file

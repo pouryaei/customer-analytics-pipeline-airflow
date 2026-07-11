@@ -37,3 +37,15 @@ Thumbs.db
 # Coverage
 .coverage
 htmlcov/
+
+*.egg-info/
+
+# Data
+data/external/*
+!data/external/.gitkeep
+
+data/raw/*
+!data/raw/.gitkeep
+
+data/processed/*
+!data/processed/.gitkeep

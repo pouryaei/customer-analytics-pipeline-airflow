@@ -7,6 +7,15 @@ name = "customer-data-platform"
 version = "0.1.0"
 description = "Production Customer Analytics Pipeline with Apache Airflow"
 requires-python = ">=3.11"
+dependencies = [
+    "pandas",
+    "pyarrow",
+    "openpyxl",
+    "SQLAlchemy",
+    "psycopg2-binary",
+    "scikit-learn",
+    "mlflow",
+]
 
 [tool.setuptools]
 package-dir = {"" = "src"}

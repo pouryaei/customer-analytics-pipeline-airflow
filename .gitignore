@@ -10,6 +10,8 @@ __pycache__/
 airflow/logs/
 airflow/airflow.db
 airflow/airflow.cfg
+airflow/airflow.db-shm
+airflow/airflow.db-wal
 airflow/standalone_admin_password.txt
 airflow/*.pid
 airflow/simple_auth_manager_passwords.json.generated
@@ -49,3 +51,19 @@ data/raw/*
 
 data/processed/*
 !data/processed/.gitkeep
+
+data/models/*
+!data/models/.gitkeep
+
+data/reports/*
+!data/reports/.gitkeep
+
+data/features/*
+!data/features/.gitkeep
+
+data/archive/*
+!data/archive/.gitkeep
+
+mlruns/
+
+mlflow.db
